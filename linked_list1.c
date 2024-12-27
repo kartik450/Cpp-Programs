@@ -15,11 +15,38 @@ int main() {
 
     second->data=45;
     second->link=NULL;
-
     struct Node* Start=first;
 
+    //Instertion at starting of Linked list
+
+    struct Node* new=(struct Node*)malloc(sizeof(struct Node));
+    new->link=first;
+    Start=new;
+    Start->data=11;
+    new->data=22;
+
+
+    //Insertion at end of linked list
+
+    struct Node* p=Start;
+
+    while(p!=NULL){
+        p=p->link;
+    }
+    // printf("%d\n",p);
+
+    struct Node* last=(struct Node*)malloc(sizeof(struct Node));
+    // last->data=66;
+
+    last->link=NULL;
+
+    second->link=last;
+    
+
+    
+
     while(Start!=NULL){
-        printf("%d\n",Start->data);
+        printf("%d\t%ld\n",Start->data,Start);
         Start=Start->link;
     }
     return 0;
